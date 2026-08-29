@@ -1,0 +1,186 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    color: #222;
+    margin: 0;
+    transition: 0.3s;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+nav {
+    margin-top: 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    width: 300px;
+    margin: 30px auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+textarea {
+    height: 100px;
+}
+
+button {
+    background-color: #49b84d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#darkModeBtn {
+    background-color: #333;
+    color: white;
+    margin: 10px;
+}
+
+#darkModeBtn:hover {
+    background-color: #555;
+}
+
+footer {
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+
+/* =========================
+   FAQ
+   ========================= */
+
+.faq {
+    margin-bottom: 15px;
+}
+
+.faq h3 {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px;
+    margin: 0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.faq h3:hover {
+    background-color: #45a049;
+}
+
+.faq p {
+    display: none;
+    background-color: #f2f2f2;
+    padding: 12px;
+    margin: 0;
+    border: 1px solid #ddd;
+    border-top: none;
+}
+
+
+body.dark-mode {
+    background-color: #121212;
+    color: white;
+}
+
+body.dark-mode header {
+    background-color: #222;
+}
+
+body.dark-mode main {
+    background-color: #1e1e1e;
+}
+
+body.dark-mode section {
+    background-color: #1e1e1e;
+}
+
+body.dark-mode input,
+body.dark-mode textarea {
+    background-color: #333;
+    color: white;
+    border: 1px solid #555;
+}
+
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder {
+    color: #ccc;
+}
+
+body.dark-mode .faq p {
+    background-color: #2b2b2b;
+    color: white;
+    border-color: #555;
+}
+
+body.dark-mode .faq h3 {
+    background-color: #388e3c;
+}
+
+body.dark-mode #darkModeBtn {
+    background-color: #f2f2f2;
+    color: #222;
+}
+
+body.dark-mode footer {
+    background-color: #000;
+}
+
+
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #333;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+.notification button {
+    background-color: #4CAF50;
+    margin-left: 10px;
+    padding: 6px 12px;
+}
+
+.notification button:hover {
+    background-color: #45a049;
+}

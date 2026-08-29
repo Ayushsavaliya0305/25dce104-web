@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudentHub - Home</title>
+    <link rel="stylesheet" href="class.css">
+</head>
+
+<body>
+
+<header>
+    <h1>StudentHub</h1>
+
+    <button id="darkModeBtn" onclick="toggleDarkMode()">
+        🌙 Dark Mode
+    </button>
+
+    <nav>
+        <a href="home.html" onclick="pageNotification(event, this.href)">Home</a> |
+        <a href="about.html" onclick="pageNotification(event, this.href)">About</a> |
+        <a href="login.html" onclick="pageNotification(event, this.href)">Login</a> |
+        <a href="faq.html" onclick="pageNotification(event, this.href)">FAQ</a> |
+        <a href="contact.html" onclick="pageNotification(event, this.href)">Contact</a> |
+        <a href="profile.html" onclick="pageNotification(event, this.href)">Profile</a> |
+        <a href="register.html" onclick="pageNotification(event, this.href)">Register</a> |
+        <a href="admin.html" onclick="pageNotification(event, this.href)">Admin</a> |
+        <a href="dashboard.html" onclick="pageNotification(event, this.href)">Dashboard</a> |
+        <a href="events.html" onclick="pageNotification(event, this.href)">Events</a>
+    </nav>
+</header>
+
+<main>
+
+    <section>
+        <h2>Welcome</h2>
+        <p>Welcome to StudentHub.</p>
+    </section>
+
+    <section>
+        <h2>Latest Events</h2>
+        <p>View upcoming student events.</p>
+    </section>
+
+</main>
+
+<footer>
+    <p>© 2025 StudentHub 25dce104</p>
+</footer>
+
+<script>
+function toggleDarkMode() {
+    document.body.classList.toggle("dark-mode");
+
+    let button = document.getElementById("darkModeBtn");
+
+    if (document.body.classList.contains("dark-mode")) {
+        button.innerHTML = "☀️ Light Mode";
+    } else {
+        button.innerHTML = "🌙 Dark Mode";
+    }
+}
+
+function pageNotification(event, page) {
+    event.preventDefault();
+
+    let confirmMove = confirm("🔔 You are going to another page. Continue?");
+
+    if (confirmMove) {
+        window.location.href = page;
+    }
+}
+</script>
+
+</body>
+</html>

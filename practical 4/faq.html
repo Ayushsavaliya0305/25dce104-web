@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FAQ</title>
+    <link rel="stylesheet" href="class.css">
+</head>
+
+<body>
+
+<header>
+    <h1>FAQ</h1>
+</header>
+
+<main>
+    <section>
+
+        <div class="faq">
+            <h3 onclick="toggleAnswer(this)">How to Register?</h3>
+            <p>Click Register and fill the form.</p>
+        </div>
+
+        <div class="faq">
+            <h3 onclick="toggleAnswer(this)">How to Login?</h3>
+            <p>Use your email and password.</p>
+        </div>
+
+    </section>
+</main>
+
+<footer>
+    <p>StudentHub 25dce104</p>
+</footer>
+
+<script>
+function toggleAnswer(question) {
+    let answer = question.nextElementSibling;
+
+    if (answer.style.display === "block") {
+        answer.style.display = "none";
+    } else {
+        answer.style.display = "block";
+    }
+}
+</script>
+
+</body>
+</html>
