@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <title>Student Profiles</title>
+
+    
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+
+</head>
+
+<body>
+
+    <h1>Student Profiles</h1>
+
+    <input
+        type="text"
+        id="search"   
+        placeholder="Search student name">
+
+    
+    <select id="courseFilter">
+
+        <option value="all">All Courses</option>
+        <option value="B.Tech">B.Tech</option>
+        <option value="BCA">BCA</option>
+        <option value="BBA">BBA</option>
+
+    </select>
+                                
+    <select id="sort">
+
+        <option value="none">Sort By</option>
+        <option value="az">Name A-Z</option>
+        <option value="za">Name Z-A</option>
+
+    </select>
+
+    <div id="studentList"></div>
+
+    <div id="pagination"></div>
+
+</body>
+
+</html>

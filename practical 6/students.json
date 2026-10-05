@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "name": "Ayush",
+        "course": "B.Tech",
+        "year": 2
+    },
+    {
+        "id": 2,
+        "name": "Rahul",
+        "course": "BCA",
+        "year": 1
+    },
+    {
+        "id": 3,
+        "name": "Priya",
+        "course": "B.Tech",
+        "year": 3
+    },
+    {
+        "id": 4,
+        "name": "Neha",
+        "course": "BCA",
+        "year": 2
+    },
+    {
+        "id": 5,
+        "name": "Karan",
+        "course": "BBA",
+        "year": 1
+    },
+    {
+        "id": 6,
+        "name": "Riya",
+        "course": "B.Tech",
+        "year": 1
+    }
+]
