@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Registration Form</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            width: 450px;
+            margin: 30px auto;
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .gender {
+            margin: 10px 0;
+        }
+
+        .gender input {
+            width: auto;
+        }
+
+        .terms input {
+            width: auto;
+        }
+
+        .error {
+            color: red;
+            font-size: 13px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: green;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: darkgreen;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Student Registration Form</h2>
+
+    <form id="registrationForm">
+
+       
+        <label>Name:</label>
+        <input type="text" id="name" placeholder="Enter your name">
+        <span class="error" id="nameError"></span>
+
+
+        
+        <label>Email:</label>
+        <input type="email" id="email" placeholder="Enter your email">
+        <span class="error" id="emailError"></span>
+
+
+      
+        <label>Mobile Number:</label>
+        <input type="tel" id="mobile" placeholder="Enter 10 digit mobile number">
+        <span class="error" id="mobileError"></span>
+
+
+       
+        <label>Password:</label>
+        <input type="password" id="password" placeholder="Enter password">
+        <span class="error" id="passwordError"></span>
+
+
+       
+        <label>Confirm Password:</label>
+        <input type="password" id="confirmPassword"
+               placeholder="Confirm your password">
+        <span class="error" id="confirmPasswordError"></span>
+
+
+        <label>Course:</label>
+        <select id="course">
+            <option value="">Select Course</option>
+            <option value="BCA">BCA</option>
+            <option value="BBA">BBA</option>
+            <option value="BCom">B.Com</option>
+            <option value="MCA">MCA</option>
+        </select>
+
+        <span class="error" id="courseError"></span>
+
+
+        <label>Year:</label>
+        <select id="year">
+            <option value="">Select Year</option>
+            <option value="1">1st Year</option>
+            <option value="2">2nd Year</option>
+            <option value="3">3rd Year</option>
+        </select>
+
+        <span class="error" id="yearError"></span>
+
+
+       
+        <label>Gender:</label>
+
+        <div class="gender">
+            <input type="radio" name="gender" value="Male"> Male
+
+            <input type="radio" name="gender" value="Female"> Female
+
+            <input type="radio" name="gender" value="Other"> Other
+        </div>
+
+        <span class="error" id="genderError"></span>
+
+
+        <div class="terms">
+            <input type="checkbox" id="terms">
+
+            <label>
+                I accept Terms and Conditions
+            </label>
+        </div>
+
+        <span class="error" id="termsError"></span>
+
+        <br>
+
+        <button type="submit">Register</button>
+
+    </form>
+
+</div>
+
+
+<script>
+
+document.getElementById("registrationForm")
+.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+
+    let name = document.getElementById("name").value.trim();
+
+    let email = document.getElementById("email").value.trim();
+
+    let mobile = document.getElementById("mobile").value.trim();
+
+    let password = document.getElementById("password").value;
+
+    let confirmPassword =
+        document.getElementById("confirmPassword").value;
+
+    let course = document.getElementById("course").value;
+
+    let year = document.getElementById("year").value;
+
+    let gender =
+        document.querySelector('input[name="gender"]:checked');
+
+    let terms =
+        document.getElementById("terms").checked;
+
+    document.getElementById("nameError").innerHTML = "";
+
+    document.getElementById("emailError").innerHTML = "";
+
+    document.getElementById("mobileError").innerHTML = "";
+
+    document.getElementById("passwordError").innerHTML = "";
+
+    document.getElementById("confirmPasswordError").innerHTML = "";
+
+    document.getElementById("courseError").innerHTML = "";
+
+    document.getElementById("yearError").innerHTML = "";
+
+    document.getElementById("genderError").innerHTML = "";
+
+    document.getElementById("termsError").innerHTML = "";
+
+
+  
+
+    let isValid = true;
+
+
+
+    let namePattern = /^[A-Za-z ]{3,30}$/;
+
+    if (!namePattern.test(name)) {
+
+        document.getElementById("nameError").innerHTML =
+            "Enter valid name (only letters, minimum 3 characters)";
+
+        isValid = false;
+    }
+
+
+
+    let emailPattern =
+        /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailPattern.test(email)) {
+
+        document.getElementById("emailError").innerHTML =
+            "Enter valid email address";
+
+        isValid = false;
+    }
+
+
+
+    let mobilePattern = /^[6-9]\d{9}$/;
+
+    if (!mobilePattern.test(mobile)) {
+
+        document.getElementById("mobileError").innerHTML =
+            "Enter valid 10 digit mobile number";
+
+        isValid = false;
+    }
+
+
+   
+
+    let passwordPattern =
+        /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&]).{8,}$/;
+
+    if (!passwordPattern.test(password)) {
+
+        document.getElementById("passwordError").innerHTML =
+            "Password must contain uppercase, lowercase, number and special character";
+
+        isValid = false;
+    }
+
+
+   
+
+    if (password !== confirmPassword) {
+
+        document.getElementById("confirmPasswordError").innerHTML =
+            "Passwords do not match";
+
+        isValid = false;
+    }
+
+
+    if (course === "") {
+
+        document.getElementById("courseError").innerHTML =
+            "Please select a course";
+
+        isValid = false;
+    }
+
+
+
+    if (year === "") {
+
+        document.getElementById("yearError").innerHTML =
+            "Please select a year";
+
+        isValid = false;
+    }
+
+
+
+    if (!gender) {
+
+        document.getElementById("genderError").innerHTML =
+            "Please select gender";
+
+        isValid = false;
+    }
+
+
+    if (!terms) {
+
+        document.getElementById("termsError").innerHTML =
+            "Please accept Terms and Conditions";
+
+        isValid = false;
+    }
+
+
+    if (isValid) {
+
+        alert("Student Registration Successful!");
+
+        document.getElementById("registrationForm").reset();
+    }
+
+});
+
+</script>
+
+</body>
+</html>
