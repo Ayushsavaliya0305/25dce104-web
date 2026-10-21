@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Practical 13 - Events AJAX CRUD</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="card wide">
+    <h1>Events &mdash; AJAX CRUD (Fetch API)</h1>
+    <p class="muted">List / Add / Update / Delete via PHP JSON API &mdash; no page reload.
+       Endpoints: <code>api/list.php</code>, <code>api/create.php</code>, <code>api/update.php</code>, <code>api/delete.php</code></p>
+
+    <div id="message" class="hidden"></div>
+
+    <!-- Search / filter bar (fires fetch, re-renders table only) -->
+    <div class="filter-bar">
+        <input type="text" id="searchInput" placeholder="Search title / venue">
+        <select id="statusFilter">
+            <option value="">All Status</option>
+            <option value="upcoming">upcoming</option>
+            <option value="completed">completed</option>
+            <option value="cancelled">cancelled</option>
+        </select>
+        <button class="btn btn-search" id="searchBtn">Search</button>
+        <button class="btn btn-reset" id="resetBtn">Reset</button>
+    </div>
+
+    <!-- Add / Edit form (single form, toggled by hidden id) -->
+    <div class="form-panel">
+        <h2 id="formTitle">Add Event</h2>
+        <form id="eventForm">
+            <input type="hidden" id="eventId" value="">
+            <div class="grid">
+                <div>
+                    <label for="title">Title *</label>
+                    <input type="text" id="title" required minlength="3" maxlength="150" placeholder="Event title">
+                </div>
+                <div>
+                    <label for="event_date">Event Date *</label>
+                    <input type="date" id="event_date" required>
+                </div>
+                <div>
+                    <label for="venue">Venue *</label>
+                    <input type="text" id="venue" required maxlength="150" placeholder="Venue">
+                </div>
+                <div>
+                    <label for="status">Status</label>
+                    <select id="status">
+                        <option value="upcoming">upcoming</option>
+                        <option value="completed">completed</option>
+                        <option value="cancelled">cancelled</option>
+                    </select>
+                </div>
+            </div>
+            <label for="description">Description</label>
+            <textarea id="description" rows="3" placeholder="Optional description"></textarea>
+            <div class="form-row">
+                <button type="submit" class="btn btn-save" id="submitBtn">Save Event</button>
+                <button type="button" class="btn btn-back hidden" id="cancelEditBtn">Cancel Edit</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="count" id="countLabel">Loading...</div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th><th>Title</th><th>Date</th>
+                <th>Venue</th><th>Status</th><th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="eventsBody">
+            <tr><td colspan="6" style="text-align:center;">Loading events...</td></tr>
+        </tbody>
+    </table>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
